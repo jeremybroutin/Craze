@@ -8,4 +8,5 @@ Here is an exhaustive list of existing features of Craze app:
 - all clothes are displayed in a collection view (closet)
 - when a recommendation is validated, it is stored as an Outfit (Core Data Object)
 - all outfits and the data at which they were chosen (validated) by the user are available in a TableView Controller
+
 Many more features and recommendation engine enhancements are planned and will be added progresively over the coming months.
