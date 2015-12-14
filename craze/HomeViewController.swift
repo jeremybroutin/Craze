@@ -394,7 +394,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     alertController.addAction(firstAction)
     let secondAction = UIAlertAction(title: constantsFile.validateSecondActionTitle, style: constantsFile.validateSecondActionStyle){ (action) in
       let controller = self.storyboard?.instantiateViewControllerWithIdentifier("tableView")
-      self.dismissViewControllerAnimated(true, completion: nil)
+      alertController.dismissViewControllerAnimated(true, completion: nil)
       self.navigationController?.pushViewController(controller!, animated: true)
     }
     alertController.addAction(secondAction)
