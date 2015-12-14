@@ -1,6 +1,6 @@
 //
 //  Clothe.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 11/1/15.
 //  Copyright © 2015 Jeremy Broutin. All rights reserved.

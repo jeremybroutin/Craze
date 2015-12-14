@@ -1,6 +1,6 @@
 //
 //  CoreDataStackManager.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 11/2/15.
 //  Copyright © 2015 Jeremy Broutin. All rights reserved.
@@ -17,7 +17,7 @@ import CoreData
 *
 */
 
-private let SQLITE_FILE_NAME = "FooBar.sqlite"
+private let SQLITE_FILE_NAME = "Craze.sqlite"
 
 class CoreDataStackManager {
   

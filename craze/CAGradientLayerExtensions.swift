@@ -1,6 +1,6 @@
 //
 //  CAGradientLayerExtensions.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 12/12/15.
 //  Copyright © 2015 Jeremy Broutin. All rights reserved.

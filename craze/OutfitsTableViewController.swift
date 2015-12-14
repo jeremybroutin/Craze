@@ -1,6 +1,6 @@
 //
 //  OutfitsTableViewController.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 11/24/15.
 //  Copyright © 2015 Jeremy Broutin. All rights reserved.

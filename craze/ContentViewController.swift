@@ -1,6 +1,6 @@
 //
 //  ContentViewController.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 12/13/15.
 //  Copyright © 2015 Jeremy Broutin. All rights reserved.

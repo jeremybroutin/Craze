@@ -1,6 +1,6 @@
 //
 //  HomeViewController.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 10/18/15.
 //  Copyright (c) 2015 Jeremy Broutin. All rights reserved.
@@ -11,9 +11,9 @@ import UIKit
 import CoreLocation
 import CoreData
 
-let weatherNotificationKey = "com.foobar.weatherNotificationKey"
+let weatherNotificationKey = "com.foobar.craze.weatherNotificationKey"
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTransitionListener {
   
   // Properties
   @IBOutlet weak var topView: UIView!
@@ -21,6 +21,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
   @IBOutlet weak var mainWeatherLabel: UILabel!
   @IBOutlet weak var weatherIconImage: UIImageView!
   @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var contentView: UIView!
+  @IBOutlet weak var helloLabel: UILabel!
+  @IBOutlet weak var noRecoLabel: UILabel!
+  
   @IBOutlet weak var imageTop: UIImageView!
   @IBOutlet weak var refreshButtonShadow: UIButton!
   @IBOutlet weak var refreshButton: UIButton!
@@ -89,6 +93,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     refreshButtonShadow.layer.shadowOffset = CGSize(width: 0.2, height: 1.0)
     // disable validate outfit
     validateButton.hidden = true
+    
+    //ModalTransition Listener
+    ModalTransitionMediator.sharedInstance().setListener(self)
     
     // Ask for Authorisation from the User to use its location
     self.locationManager.requestAlwaysAuthorization()
@@ -178,9 +185,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     // Load recommendations and display images based on results
     dispatch_async(GlobalUserInteractiveQueue){
       RecoEngine.sharedInstance().runRecoEngineBis(self.storedWeather) { selectedTop, selectedPants, selectedShoes, error in
+        // handle the top
         if let top = selectedTop {
           self.recoTop = top
           dispatch_async(self.GlobalMainQueue){
+            self.showRecoContent()
             self.imageTop.image = UIImage(data: top.imageData!)
             self.topActivityIndicator.stopAnimating()
           }
@@ -188,9 +197,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
           self.recoTop = nil
           self.loadDefaultImage(self.imageTop, activityIndicator: self.topActivityIndicator)
         }
+        // handle the pants
         if let pants = selectedPants {
           self.recoPants = pants
           dispatch_async(self.GlobalMainQueue){
+            self.showRecoContent()
             self.imagePants.image = UIImage(data: pants.imageData!)
             self.pantsActivityIndicator.stopAnimating()
           }
@@ -198,9 +209,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
           self.recoPants = nil
           self.loadDefaultImage(self.imagePants, activityIndicator: self.pantsActivityIndicator)
         }
+        // handle the shoes
         if let shoes = selectedShoes {
           self.recoShoes = shoes
           dispatch_async(self.GlobalMainQueue){
+            self.showRecoContent()
             self.imageShoes.image = UIImage(data: shoes.imageData!)
             self.shoesActivityIndicator.stopAnimating()
           }
@@ -208,8 +221,34 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
           self.recoShoes = nil
           self.loadDefaultImage(self.imageShoes, activityIndicator: self.shoesActivityIndicator)
         }
+        // handle the case where everything is nil
+        if selectedTop == nil && selectedPants == nil && selectedShoes == nil {
+          print("everything is empty")
+          dispatch_async(self.GlobalMainQueue){
+            self.hideRecoContent()
+            }
+        }
       }
       self.enableOrDisableValidateButton()
+    }
+  }
+  
+  // show reco content if reco is empty
+  func showRecoContent() {
+    self.contentView.hidden = false
+    self.helloLabel.hidden = true
+    self.noRecoLabel.hidden = true
+    enableRefreshButtons()
+  }
+  
+  // hide reco content view if empty
+  func hideRecoContent(){
+    self.contentView.hidden = true
+    self.helloLabel.hidden = false
+    self.noRecoLabel.text = constantsFile.noClothes
+    self.noRecoLabel.hidden = false
+    if refreshButton.enabled {
+      disableRefreshButtons()
     }
   }
   
@@ -232,6 +271,20 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.validateButton.hidden = true
       }
     }
+  }
+  
+  func enableRefreshButtons(){
+    self.refreshButton.enabled = true
+    self.refreshButton.alpha = 1
+    self.refreshButtonShadow.enabled = true
+    self.refreshButtonShadow.alpha = 1
+  }
+  
+  func disableRefreshButtons(){
+    self.refreshButtonShadow.enabled = false
+    self.refreshButtonShadow.alpha = 0.5
+    self.refreshButton.enabled = false
+    self.refreshButton.alpha = 0.5
   }
 
   
@@ -271,7 +324,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     pantsActivityIndicator.hidden = false
     pantsActivityIndicator.startAnimating()
     dispatch_async(GlobalUserInitiatedQueue){
-      RecoEngine.sharedInstance().selectPantsOrShoes(["Pants", "Jeans", "Legging", "Skirt", "Jogging"], weather: self.storedWeather, topToMatch: self.recoTop, pantsToMatch: nil){ result, error in
+      RecoEngine.sharedInstance().selectPantsOrShoes(self.constantsFile.allPantsArray, weather: self.storedWeather, topToMatch: self.recoTop, pantsToMatch: nil){ result, error in
         if let pants = result {
           self.recoPants = pants
           dispatch_async(self.GlobalMainQueue){
@@ -296,7 +349,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     shoesActivityIndicator.hidden = false
     shoesActivityIndicator.startAnimating()
     dispatch_async(GlobalUserInitiatedQueue){
-      RecoEngine.sharedInstance().selectPantsOrShoes(["Shoes", "Boots", "Sneakers"], weather: self.storedWeather, topToMatch: self.recoTop, pantsToMatch: self.recoPants){ result, error in
+      RecoEngine.sharedInstance().selectPantsOrShoes(self.constantsFile.allShoesArray, weather: self.storedWeather, topToMatch: self.recoTop, pantsToMatch: self.recoPants){ result, error in
         if let shoes = result {
           self.recoShoes = shoes
           dispatch_async(self.GlobalMainQueue){
@@ -383,9 +436,25 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
   
   func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
     self.weatherIconImage.image = UIImage(named: "no-weather")
-    self.colorToUseInBackground = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
+    //self.colorToUseInBackground = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
     NavigationController.sharedInstance().setNavBar(self)
     self.mainWeatherLabel.text = constantsFile.mainWeatherLabelValues[constantsFile.noSongLabelIndex]
+    self.noRecoLabel.text = constantsFile.noWeatherInfo
+  }
+  
+  /******************************** MARK: - ModalTransitor Listener **********************************/
+   
+  func popoverDismissed() {
+    enableRefreshButtons()
+  }
+  
+  /************************************ MARK: - Shared Instance *************************************/
+  
+  class func sharedInstance() -> HomeViewController {
+    struct Singleton {
+      static var sharedInstance = HomeViewController()
+    }
+    return Singleton.sharedInstance
   }
   
 }

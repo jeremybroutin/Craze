@@ -1,6 +1,6 @@
 //
 //  GlobalConstants.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 12/4/15.
 //  Copyright © 2015 Jeremy Broutin. All rights reserved.
@@ -46,6 +46,10 @@ class GlobalConstants: NSObject {
     "Let It Snow! Let It Snow! Let It Snow!",
     "No weather song :("
   ]
+  // home page noRecoLabel
+  let noWeatherInfo = "'Hmm it looks like we were unable to find the weather for your location...\nMake sure that you share your location with us in your Iphone settings and restart the app!'"
+  let noClothes = "It seems we have no matching recommendation at the moment"
+  
   // validation of the recommendation
   let validateAlertStyle: UIAlertControllerStyle = .Alert
   let validateAlertTitle = "Great!"
@@ -58,6 +62,9 @@ class GlobalConstants: NSObject {
   // Edit page constants
   // categories Arrays
   let categoryArray = ["Top", "Pullover", "Sweater", "Hoodie", "T-shirt", "Dress", "Pants", "Jeans", "Legging", "Skirt", "Jogging", "Shoes", "Boots", "Sneakers"]
+  let allTopArray = ["Top", "Pullover", "Sweater", "Hoodie", "T-shirt", "Dress"]
+  let allPantsArray = ["Pants", "Jeans", "Legging", "Skirt", "Jogging"]
+  let allShoesArray = ["Shoes", "Boots", "Sneakers"]
   let seasonArray = ["All", "Winter", "Spring", "Summer", "Fall"]
   let colorArray = ["Black", "Blue", "Brown", "Grey", "Green", "Orange", "Red", "Violet", "White", "Yellow"]
   let styleArray = ["Casual: Day in a Life, Go to work", "Fancy: Dress to Impress, Night out, Suit up", "Sport: Time for exercice, or Lazy day"]

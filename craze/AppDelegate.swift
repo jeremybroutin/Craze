@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  foobar
+//  craze
 //
 //  Created by Jeremy Broutin on 10/16/15.
 //  Copyright (c) 2015 Jeremy Broutin. All rights reserved.
