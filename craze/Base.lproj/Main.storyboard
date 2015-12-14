@@ -11,7 +11,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="PKa-sJ-Kds">
             <objects>
-                <viewController storyboardIdentifier="TutorialViewController" id="cfI-S3-ycx" customClass="TutorialViewController" customModule="foobar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" id="cfI-S3-ycx" customClass="TutorialViewController" customModule="craze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TEC-HK-SkU"/>
                         <viewControllerLayoutGuide type="bottom" id="bJP-LU-bRR"/>
@@ -71,7 +71,7 @@
         <!--Content View Controller-->
         <scene sceneID="hBC-c7-5c1">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" id="pY2-ld-9Yi" customClass="ContentViewController" customModule="foobar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" id="pY2-ld-9Yi" customClass="ContentViewController" customModule="craze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qmn-l0-myX"/>
                         <viewControllerLayoutGuide type="bottom" id="gee-5R-xjE"/>
@@ -176,7 +176,6 @@
                                 <exclude reference="Nab-0V-PoC"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0dD-4H-s0G"/>
                                 <exclude reference="Vin-IS-XcP"/>
                                 <exclude reference="gHI-KK-sge"/>
                                 <exclude reference="7gx-9N-Wll"/>
@@ -189,6 +188,7 @@
                                 <exclude reference="8fS-va-Yew"/>
                                 <exclude reference="Bue-Qb-yYS"/>
                                 <exclude reference="cjL-UM-Ky4"/>
+                                <exclude reference="0dD-4H-s0G"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -197,7 +197,6 @@
                                 <include reference="Nab-0V-PoC"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0dD-4H-s0G"/>
                                 <include reference="Vin-IS-XcP"/>
                                 <include reference="gHI-KK-sge"/>
                                 <exclude reference="7gx-9N-Wll"/>
@@ -210,6 +209,7 @@
                                 <include reference="8fS-va-Yew"/>
                                 <include reference="Bue-Qb-yYS"/>
                                 <include reference="cjL-UM-Ky4"/>
+                                <include reference="0dD-4H-s0G"/>
                             </mask>
                         </variation>
                     </view>
@@ -242,7 +242,7 @@
         <!--Collection View Controller-->
         <scene sceneID="PHf-1m-K1j">
             <objects>
-                <viewController storyboardIdentifier="collectionView" id="TNG-hK-DyY" customClass="CollectionViewController" customModule="foobar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="collectionView" id="TNG-hK-DyY" customClass="CollectionViewController" customModule="craze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O9X-hN-p9L"/>
                         <viewControllerLayoutGuide type="bottom" id="34E-mH-1Bf"/>
@@ -444,7 +444,7 @@
         <!--Outfits Table View Controller-->
         <scene sceneID="vaT-pR-U52">
             <objects>
-                <tableViewController storyboardIdentifier="tableView" id="hOv-1s-weu" customClass="OutfitsTableViewController" customModule="foobar" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tableView" id="hOv-1s-weu" customClass="OutfitsTableViewController" customModule="craze" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OAL-rE-Wbg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -473,7 +473,7 @@
         <!--Edit View Controller-->
         <scene sceneID="Jaj-7u-iOV">
             <objects>
-                <viewController storyboardIdentifier="editClothe" id="Q73-er-T1O" customClass="EditViewController" customModule="foobar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editClothe" id="Q73-er-T1O" customClass="EditViewController" customModule="craze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PeV-gl-mcK"/>
                         <viewControllerLayoutGuide type="bottom" id="syw-5r-2Bi"/>
@@ -1091,7 +1091,7 @@
         <!--Home View Controller-->
         <scene sceneID="avJ-YH-wIN">
             <objects>
-                <viewController storyboardIdentifier="homeView" title="Home View Controller" id="wEt-GR-wjD" customClass="HomeViewController" customModule="foobar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeView" title="Home View Controller" id="wEt-GR-wjD" customClass="HomeViewController" customModule="craze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I7i-Fw-QI8"/>
                         <viewControllerLayoutGuide type="bottom" id="6KE-fD-Aqn"/>
@@ -2152,35 +2152,35 @@
                                 <exclude reference="s7l-KX-60U"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="jIY-wK-HsP"/>
-                                <exclude reference="2Ex-V5-gWP"/>
-                                <exclude reference="97U-2p-pgn"/>
-                                <exclude reference="E1E-Ov-L0G"/>
-                                <exclude reference="YKC-3j-QnW"/>
-                                <exclude reference="w7x-cK-CrY"/>
-                                <exclude reference="xMA-03-zaf"/>
-                                <exclude reference="E8M-to-wRb"/>
-                                <exclude reference="1Fd-ta-5zI"/>
-                                <exclude reference="Fxp-Kg-1BO"/>
-                                <exclude reference="b8R-sA-Pgy"/>
-                                <exclude reference="me2-Kf-2tN"/>
-                                <exclude reference="uYo-uy-Ony"/>
-                                <exclude reference="uD8-j4-Mck"/>
                                 <exclude reference="2AN-it-OCT"/>
+                                <exclude reference="jIY-wK-HsP"/>
                                 <exclude reference="gHS-1U-VPg"/>
                                 <exclude reference="gzT-lp-lpi"/>
                                 <exclude reference="pJp-jo-VVU"/>
                                 <exclude reference="b33-GN-hfc"/>
                                 <exclude reference="cMS-09-DWs"/>
+                                <exclude reference="2Ex-V5-gWP"/>
+                                <exclude reference="97U-2p-pgn"/>
                                 <exclude reference="DwZ-MP-f1k"/>
+                                <exclude reference="E1E-Ov-L0G"/>
                                 <exclude reference="V3H-Wq-eE6"/>
+                                <exclude reference="YKC-3j-QnW"/>
+                                <exclude reference="w7x-cK-CrY"/>
+                                <exclude reference="xMA-03-zaf"/>
+                                <exclude reference="E8M-to-wRb"/>
                                 <exclude reference="ccL-Dg-Hw0"/>
-                                <exclude reference="dj0-xI-x8F"/>
                                 <exclude reference="hgO-LG-ijy"/>
+                                <exclude reference="1Fd-ta-5zI"/>
                                 <exclude reference="463-ll-AIc"/>
+                                <exclude reference="Fxp-Kg-1BO"/>
                                 <exclude reference="RNH-QX-w9g"/>
+                                <exclude reference="b8R-sA-Pgy"/>
+                                <exclude reference="me2-Kf-2tN"/>
+                                <exclude reference="uYo-uy-Ony"/>
                                 <exclude reference="VA5-ok-dfo"/>
                                 <exclude reference="ceq-Oy-gyx"/>
+                                <exclude reference="uD8-j4-Mck"/>
+                                <exclude reference="dj0-xI-x8F"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2191,35 +2191,35 @@
                                 <include reference="s7l-KX-60U"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="jIY-wK-HsP"/>
-                                <include reference="2Ex-V5-gWP"/>
-                                <exclude reference="97U-2p-pgn"/>
-                                <exclude reference="E1E-Ov-L0G"/>
-                                <include reference="YKC-3j-QnW"/>
-                                <exclude reference="w7x-cK-CrY"/>
-                                <exclude reference="xMA-03-zaf"/>
-                                <include reference="E8M-to-wRb"/>
-                                <include reference="1Fd-ta-5zI"/>
-                                <include reference="Fxp-Kg-1BO"/>
-                                <exclude reference="b8R-sA-Pgy"/>
-                                <exclude reference="me2-Kf-2tN"/>
-                                <include reference="uYo-uy-Ony"/>
-                                <include reference="uD8-j4-Mck"/>
                                 <include reference="2AN-it-OCT"/>
+                                <include reference="jIY-wK-HsP"/>
                                 <exclude reference="gHS-1U-VPg"/>
                                 <include reference="gzT-lp-lpi"/>
                                 <include reference="pJp-jo-VVU"/>
                                 <include reference="b33-GN-hfc"/>
                                 <exclude reference="cMS-09-DWs"/>
+                                <include reference="2Ex-V5-gWP"/>
+                                <exclude reference="97U-2p-pgn"/>
                                 <include reference="DwZ-MP-f1k"/>
+                                <exclude reference="E1E-Ov-L0G"/>
                                 <exclude reference="V3H-Wq-eE6"/>
+                                <include reference="YKC-3j-QnW"/>
+                                <exclude reference="w7x-cK-CrY"/>
+                                <exclude reference="xMA-03-zaf"/>
+                                <include reference="E8M-to-wRb"/>
                                 <exclude reference="ccL-Dg-Hw0"/>
-                                <exclude reference="dj0-xI-x8F"/>
                                 <include reference="hgO-LG-ijy"/>
+                                <include reference="1Fd-ta-5zI"/>
                                 <include reference="463-ll-AIc"/>
+                                <include reference="Fxp-Kg-1BO"/>
                                 <include reference="RNH-QX-w9g"/>
+                                <exclude reference="b8R-sA-Pgy"/>
+                                <exclude reference="me2-Kf-2tN"/>
+                                <include reference="uYo-uy-Ony"/>
                                 <include reference="VA5-ok-dfo"/>
                                 <include reference="ceq-Oy-gyx"/>
+                                <include reference="uD8-j4-Mck"/>
+                                <exclude reference="dj0-xI-x8F"/>
                             </mask>
                         </variation>
                     </view>
