@@ -12,7 +12,6 @@
 		E316ABA81BD191CA00487476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E316ABA61BD191CA00487476 /* Main.storyboard */; };
 		E316ABAA1BD191CA00487476 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E316ABA91BD191CA00487476 /* Images.xcassets */; };
 		E316ABAD1BD191CA00487476 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E316ABAB1BD191CA00487476 /* LaunchScreen.xib */; };
-		E316ABB91BD191CA00487476 /* foobarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316ABB81BD191CA00487476 /* foobarTests.swift */; };
 		E316ABC31BD428EA00487476 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316ABC21BD428EA00487476 /* HomeViewController.swift */; };
 		E316ABC71BD83B6D00487476 /* OWM_Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316ABC61BD83B6D00487476 /* OWM_Client.swift */; };
 		E316ABC91BD83D0600487476 /* OMW_Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316ABC81BD83D0600487476 /* OMW_Constants.swift */; };
@@ -23,9 +22,7 @@
 		E337DF471C0F8AD000809E21 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337DF461C0F8AD000809E21 /* EditViewController.swift */; };
 		E3421EAD1BFD1D2A00CD32FE /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3421EAC1BFD1D2A00CD32FE /* NavigationController.swift */; };
 		E3421EB51BFD25CC00CD32FE /* RecoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3421EB41BFD25CC00CD32FE /* RecoEngine.swift */; };
-		E3718DD81BF2A85C00F11671 /* CF_Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3718DD71BF2A85C00F11671 /* CF_Client.swift */; };
-		E3718DDA1BF2ABCC00F11671 /* CF_Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3718DD91BF2ABCC00F11671 /* CF_Constants.swift */; };
-		E3718DDC1BF2C88F00F11671 /* CF_Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3718DDB1BF2C88F00F11671 /* CF_Convenience.swift */; };
+		E375356C1C1F5C7C006CB7D9 /* foobarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E316ABB81BD191CA00487476 /* foobarTests.swift */; };
 		E3781E271C1CD08400BF5E0D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3781E261C1CD08400BF5E0D /* UIViewExtensions.swift */; };
 		E37F07C91BE8326000C1A339 /* ClotheCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F07C81BE8326000C1A339 /* ClotheCell.swift */; };
 		E3A74BB21C1CE56800842956 /* CAGradientLayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A74BB11C1CE56800842956 /* CAGradientLayerExtensions.swift */; };
@@ -87,9 +84,6 @@
 		E337DF461C0F8AD000809E21 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		E3421EAC1BFD1D2A00CD32FE /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E3421EB41BFD25CC00CD32FE /* RecoEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoEngine.swift; sourceTree = "<group>"; };
-		E3718DD71BF2A85C00F11671 /* CF_Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CF_Client.swift; sourceTree = "<group>"; };
-		E3718DD91BF2ABCC00F11671 /* CF_Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CF_Constants.swift; sourceTree = "<group>"; };
-		E3718DDB1BF2C88F00F11671 /* CF_Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CF_Convenience.swift; sourceTree = "<group>"; };
 		E3781E261C1CD08400BF5E0D /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		E37F07C81BE8326000C1A339 /* ClotheCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotheCell.swift; sourceTree = "<group>"; };
 		E3A74BB11C1CE56800842956 /* CAGradientLayerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtensions.swift; sourceTree = "<group>"; };
@@ -151,7 +145,6 @@
 				E3F631491C03C8F000D53268 /* Reco Engine */,
 				E3D4AF8B1BF15369006C3333 /* Model */,
 				E3D4AF8A1BF15356006C3333 /* Views */,
-				E3718DD61BF2A83000F11671 /* CamFindAPI */,
 				E316ABD21BDACE9000487476 /* OpenWeatherAPI */,
 				E316ABA61BD191CA00487476 /* Main.storyboard */,
 				E316ABAB1BD191CA00487476 /* LaunchScreen.xib */,
@@ -198,16 +191,6 @@
 			name = OpenWeatherAPI;
 			sourceTree = "<group>";
 		};
-		E3718DD61BF2A83000F11671 /* CamFindAPI */ = {
-			isa = PBXGroup;
-			children = (
-				E3718DD71BF2A85C00F11671 /* CF_Client.swift */,
-				E3718DD91BF2ABCC00F11671 /* CF_Constants.swift */,
-				E3718DDB1BF2C88F00F11671 /* CF_Convenience.swift */,
-			);
-			name = CamFindAPI;
-			sourceTree = "<group>";
-		};
 		E3D4AF8A1BF15356006C3333 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,8 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				E3FF9AFB1BE6DB00001AFA23 /* Model.xcdatamodeld */,
-				E37F07C81BE8326000C1A339 /* ClotheCell.swift */,
 				E3CBBC491C122EDB005B481C /* ClotheCell.xib */,
+				E37F07C81BE8326000C1A339 /* ClotheCell.swift */,
 				E3F6314E1C051ADE00D53268 /* OutfitCell.xib */,
 				E3F631521C051B9A00D53268 /* OutfitCellTableViewCell.swift */,
 				E3FF9AF91BE6D677001AFA23 /* Clothe.swift */,
@@ -359,12 +342,10 @@
 			files = (
 				E337DF471C0F8AD000809E21 /* EditViewController.swift in Sources */,
 				E3F631401C03BDF100D53268 /* RecoEngine_Convenience.swift in Sources */,
-				E3718DD81BF2A85C00F11671 /* CF_Client.swift in Sources */,
 				E316ABA31BD191CA00487476 /* AppDelegate.swift in Sources */,
 				E316ABD81BDAD35E00487476 /* CoreDataStackManager.swift in Sources */,
 				E3A74BBA1C1CE67400842956 /* TutorialViewController.swift in Sources */,
 				E3F631531C051B9A00D53268 /* OutfitCellTableViewCell.swift in Sources */,
-				E3718DDC1BF2C88F00F11671 /* CF_Convenience.swift in Sources */,
 				E316ABC91BD83D0600487476 /* OMW_Constants.swift in Sources */,
 				E3FF9AFA1BE6D677001AFA23 /* Clothe.swift in Sources */,
 				E316ABD11BD98AD800487476 /* WeatherInfo.swift in Sources */,
@@ -375,7 +356,6 @@
 				E316ABD61BDAD2F900487476 /* CollectionViewController.swift in Sources */,
 				E3A74BB21C1CE56800842956 /* CAGradientLayerExtensions.swift in Sources */,
 				E3421EB51BFD25CC00CD32FE /* RecoEngine.swift in Sources */,
-				E3718DDA1BF2ABCC00F11671 /* CF_Constants.swift in Sources */,
 				E3421EAD1BFD1D2A00CD32FE /* NavigationController.swift in Sources */,
 				E3A74BBC1C1DEA7C00842956 /* ContentViewController.swift in Sources */,
 				E316ABC31BD428EA00487476 /* HomeViewController.swift in Sources */,
@@ -392,7 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E316ABB91BD191CA00487476 /* foobarTests.swift in Sources */,
+				E375356C1C1F5C7C006CB7D9 /* foobarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
