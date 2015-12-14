@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
   @IBOutlet weak var contentView: UIView!
   @IBOutlet weak var helloLabel: UILabel!
   @IBOutlet weak var noRecoLabel: UILabel!
-  
+  @IBOutlet weak var addClothesNowButton: UIButton!
   @IBOutlet weak var imageTop: UIImageView!
   @IBOutlet weak var refreshButtonShadow: UIButton!
   @IBOutlet weak var refreshButton: UIButton!
@@ -238,6 +238,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     self.contentView.hidden = false
     self.helloLabel.hidden = true
     self.noRecoLabel.hidden = true
+    self.addClothesNowButton.hidden = true
     enableRefreshButtons()
   }
   
@@ -247,6 +248,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     self.helloLabel.hidden = false
     self.noRecoLabel.text = constantsFile.noClothes
     self.noRecoLabel.hidden = false
+    self.addClothesNowButton.hidden = false
     if refreshButton.enabled {
       disableRefreshButtons()
     }
@@ -291,6 +293,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
   
   /************************************ Mark: - IBActions ******************************************/
   
+  
+  @IBAction func addClothesNowTapped(sender: UIButton) {
+    NavigationController.sharedInstance().accessAddClothe(sender)
+  }
+   
+   
    // TODO: concatenate the 3 individual refreshes in a single function
    
    // refresh the top clothe only
@@ -438,6 +446,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     self.weatherIconImage.image = UIImage(named: "no-weather")
     //self.colorToUseInBackground = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
     NavigationController.sharedInstance().setNavBar(self)
+    self.addClothesNowButton.hidden = true
     self.mainWeatherLabel.text = constantsFile.mainWeatherLabelValues[constantsFile.noSongLabelIndex]
     self.noRecoLabel.text = constantsFile.noWeatherInfo
   }

@@ -1807,6 +1807,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCy-2U-RWI" userLabel="ADD CLOTHES NOW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.23137254900000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="  ADD CLOTHES NOW  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addClothesNowTapped:" destination="wEt-GR-wjD" eventType="touchUpInside" id="L2g-an-dlb"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNW-Cg-2UP" userLabel="Refresh Button Shadow">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -2131,8 +2141,10 @@
                             <constraint firstItem="6KE-fD-Aqn" firstAttribute="top" secondItem="8GV-1h-c8b" secondAttribute="bottom" constant="8" id="VA5-ok-dfo">
                                 <variation key="widthClass=compact" constant="20"/>
                             </constraint>
+                            <constraint firstItem="uCy-2U-RWI" firstAttribute="top" secondItem="FOp-dO-gd7" secondAttribute="bottom" constant="40" id="VpO-6t-RRZ"/>
                             <constraint firstItem="715-iZ-ICY" firstAttribute="top" secondItem="ak9-pr-gR9" secondAttribute="bottom" id="YKC-3j-QnW"/>
                             <constraint firstItem="FOp-dO-gd7" firstAttribute="leading" secondItem="eR9-aL-kj9" secondAttribute="leading" constant="50" id="Zjx-dp-uxp"/>
+                            <constraint firstItem="uCy-2U-RWI" firstAttribute="centerX" secondItem="eR9-aL-kj9" secondAttribute="centerX" id="a26-x7-TmX"/>
                             <constraint firstItem="s7l-KX-60U" firstAttribute="leading" secondItem="eR9-aL-kj9" secondAttribute="leading" constant="10" id="b33-GN-hfc">
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
@@ -2152,6 +2164,7 @@
                                 <exclude reference="715-iZ-ICY"/>
                                 <exclude reference="Kk0-jb-0BI"/>
                                 <exclude reference="FOp-dO-gd7"/>
+                                <exclude reference="uCy-2U-RWI"/>
                                 <exclude reference="WNW-Cg-2UP"/>
                                 <exclude reference="8GV-1h-c8b"/>
                                 <exclude reference="s7l-KX-60U"/>
@@ -2172,6 +2185,8 @@
                                 <exclude reference="DEA-QU-0Ve"/>
                                 <exclude reference="Zjx-dp-uxp"/>
                                 <exclude reference="lAb-PO-eFh"/>
+                                <exclude reference="VpO-6t-RRZ"/>
+                                <exclude reference="a26-x7-TmX"/>
                                 <exclude reference="b33-GN-hfc"/>
                                 <exclude reference="2AN-it-OCT"/>
                                 <exclude reference="jIY-wK-HsP"/>
@@ -2187,6 +2202,7 @@
                                 <include reference="715-iZ-ICY"/>
                                 <include reference="Kk0-jb-0BI"/>
                                 <include reference="FOp-dO-gd7"/>
+                                <include reference="uCy-2U-RWI"/>
                                 <include reference="WNW-Cg-2UP"/>
                                 <include reference="8GV-1h-c8b"/>
                                 <include reference="s7l-KX-60U"/>
@@ -2207,6 +2223,8 @@
                                 <include reference="DEA-QU-0Ve"/>
                                 <include reference="Zjx-dp-uxp"/>
                                 <include reference="lAb-PO-eFh"/>
+                                <include reference="VpO-6t-RRZ"/>
+                                <include reference="a26-x7-TmX"/>
                                 <include reference="b33-GN-hfc"/>
                                 <include reference="2AN-it-OCT"/>
                                 <include reference="jIY-wK-HsP"/>
@@ -2222,6 +2240,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="1050"/>
                     <connections>
+                        <outlet property="addClothesNowButton" destination="uCy-2U-RWI" id="Fsm-uD-oZn"/>
                         <outlet property="contentView" destination="SCf-eH-McR" id="cCP-ed-Qcc"/>
                         <outlet property="helloLabel" destination="Kk0-jb-0BI" id="JoZ-wm-iik"/>
                         <outlet property="imagePants" destination="fcV-Xk-ept" id="30v-Tz-oZj"/>
