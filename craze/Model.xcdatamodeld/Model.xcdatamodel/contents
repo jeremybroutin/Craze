@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+    <entity name="Clothe" representedClassName="Clothe" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="previouslyUsed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="season" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="style" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="outfits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outfit" inverseName="clothes" inverseEntity="Outfit" syncable="YES"/>
+    </entity>
+    <entity name="Outfit" representedClassName="Outfit" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imagePants" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageShoes" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageTop" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="clothes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Clothe" inverseName="outfits" inverseEntity="Clothe" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Clothe" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Outfit" positionX="-63" positionY="27" width="128" height="135"/>
+    </elements>
+</model>

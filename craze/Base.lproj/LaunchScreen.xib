@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="7MO-B0-Np6">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="craze" translatesAutoresizingMaskIntoConstraints="NO" id="a04-1G-dkh">
+                    <rect key="frame" x="100" y="250" width="400" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="a04-1G-dkh" secondAttribute="height" multiplier="4:1" id="J6V-9F-ODz"/>
+                        <constraint firstAttribute="width" constant="400" id="Lif-bu-EuG"/>
+                        <constraint firstAttribute="height" constant="100" id="yy0-Pa-mJl"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Lif-bu-EuG"/>
+                            <exclude reference="yy0-Pa-mJl"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright© 2015 FooBar - All rights reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXn-9b-eck">
+                    <rect key="frame" x="168" y="571" width="263" height="15"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="7MO-B0-Np6" secondAttribute="trailing" id="3o7-rl-1VG"/>
+                <constraint firstAttribute="bottom" secondItem="7MO-B0-Np6" secondAttribute="bottom" id="HJ3-fk-hDt"/>
+                <constraint firstItem="7MO-B0-Np6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Hep-fs-1rc"/>
+                <constraint firstAttribute="bottom" secondItem="PXn-9b-eck" secondAttribute="bottom" constant="14" id="P2y-md-gNS"/>
+                <constraint firstItem="a04-1G-dkh" firstAttribute="centerX" secondItem="7MO-B0-Np6" secondAttribute="centerX" id="TQ4-je-j2q"/>
+                <constraint firstItem="a04-1G-dkh" firstAttribute="centerY" secondItem="7MO-B0-Np6" secondAttribute="centerY" id="Txt-od-Ks0"/>
+                <constraint firstItem="7MO-B0-Np6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XHy-C0-Lob"/>
+                <constraint firstItem="PXn-9b-eck" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c6X-nv-Q9S"/>
+                <constraint firstAttribute="trailing" secondItem="a04-1G-dkh" secondAttribute="trailing" constant="100" id="g8r-pX-tun"/>
+                <constraint firstItem="a04-1G-dkh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="oXG-VQ-e5v"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="craze" width="400" height="100"/>
+        <image name="launchscreen" width="1104" height="1104"/>
+    </resources>
+</document>
