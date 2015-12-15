@@ -47,7 +47,7 @@ class GlobalConstants: NSObject {
     "No weather song :("
   ]
   // home page noRecoLabel
-  let noWeatherInfo = "'Hmm it looks like we were unable to find the weather for your location...\nMake sure that you share your location with us in your Iphone settings and restart the app!'"
+  let noWeatherInfo = "Craze needs to know your location to check the weather and provide recommendations. \nEnable it in PRIVACY > LOCATIONS SERVICES"
   let noClothes = "It seems we have no matching recommendation at the moment"
   
   // validation of the recommendation

@@ -85,12 +85,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     self.automaticallyAdjustsScrollViewInsets = false
     // gradient color on top view
     topView.layer.insertSublayer(self.gradientTopView, atIndex: 0)
-    
     // drop shadows
-    topView.layer.shadowOpacity = 0.5
-    topView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-    refreshButtonShadow.layer.shadowOpacity = 0.5
-    refreshButtonShadow.layer.shadowOffset = CGSize(width: 0.2, height: 1.0)
+    addShadow(topView, opacity: 0.5, width: 0.0, height: 2.0)
+    addShadow(refreshButtonShadow, opacity: 0.5, width: 2.0, height: 1.0)
+    addShadow(addClothesNowButton, opacity: 0.5, width: 2.0, height: 1.0)
     // disable validate outfit
     validateButton.hidden = true
     
@@ -126,6 +124,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
   }
 
   /************************************ Mark: - Helper functions *************************************/
+  
+   // add shadow on UIViews
+  func addShadow(view: UIView, opacity: Float, width: CGFloat, height: CGFloat){
+    view.layer.shadowOffset = CGSizeMake(width, height)
+    view.layer.shadowOpacity = opacity
+    view.layer.shadowRadius = 1.0
+  }
   
    // manually turn on location manager
   func turnOnLocationManager(){
@@ -223,7 +228,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
         }
         // handle the case where everything is nil
         if selectedTop == nil && selectedPants == nil && selectedShoes == nil {
-          print("everything is empty")
           dispatch_async(self.GlobalMainQueue){
             self.hideRecoContent()
             }
@@ -250,7 +254,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     self.noRecoLabel.hidden = false
     self.addClothesNowButton.hidden = false
     if refreshButton.enabled {
-      disableRefreshButtons()
+      //disableRefreshButtons()
     }
   }
   
@@ -454,7 +458,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
   /******************************** MARK: - ModalTransitor Listener **********************************/
    
   func popoverDismissed() {
-    enableRefreshButtons()
+    dispatch_async(GlobalMainQueue){
+      self.enableRefreshButtons()
+    }
   }
   
   /************************************ MARK: - Shared Instance *************************************/

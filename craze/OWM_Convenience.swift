@@ -10,16 +10,16 @@ import Foundation
 
 extension OWM_Client {
   
-  func getWeatherInfo(lat: Double, lon: Double, completionHandler: (success: Bool, weather: WeatherInfo, error: NSError?)-> Void){
+  func getWeatherInfo(lat: Double, lon: Double, completionHandler: (success: Bool, weather: WeatherInfo?, error: NSError?)-> Void){
     let methodParameters = [
       "lat": lat,
       "lon": lon,
       "appid": Constants.apiKey
     ]
     taskForGETMethod(methodParameters as! [String : AnyObject]){ JSONResult, error in
-      if let _ = error {
-        print("error in taskForGETMethod")
-        //completionHandler(success: false, weather: nil, error: error)
+      if let error = error {
+        print("error in taskForGETMethod - getWeatherInfo")
+        completionHandler(success: false, weather: nil, error: error)
       }
       else {
         var result: WeatherInfo?
