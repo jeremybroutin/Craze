@@ -24,7 +24,7 @@ class GlobalConstants: NSObject {
   let YellowSun = UIColor(red:0.95, green:0.77, blue:0.06, alpha:1.0)
   let DarkBlueCloud = UIColor(red:0.20, green:0.29, blue:0.37, alpha:1.0)
   let PurpleRain /*lol*/ = UIColor(red:0.56, green:0.27, blue:0.68, alpha:1.0)
-  let GreySnow = UIColor(red:0.74, green:0.76, blue:0.78, alpha:1.0)
+  let GraySnow = UIColor(red:0.74, green:0.76, blue:0.78, alpha:1.0)
   let BlueDefault = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
   // home page weather icons
   let sunIcon = "sun-thick"
@@ -47,13 +47,16 @@ class GlobalConstants: NSObject {
     "No weather song :("
   ]
   // home page noRecoLabel
-  let noWeatherInfo = "Craze needs to know your location to check the weather and provide recommendations. \nEnable it in PRIVACY > LOCATIONS SERVICES"
-  let noClothes = "It seems we have no matching recommendation at the moment"
+  let noLocationInfo = "Craze needs to know your location to check the weather and provide recommendations. \nEnable it in PRIVACY > LOCATIONS SERVICES"
+  let noClothes = "It seems we have no matching recommendation at the moment."
+  // home page no weather alert
+  let noWeatherTitle = "Sorry"
+  let noWeatherMessage = "At this moment we couldn't get the weather info. \nWhile we keep on trying, your recommendations will not take the weather into consideration."
   
   // validation of the recommendation
   let validateAlertStyle: UIAlertControllerStyle = .Alert
   let validateAlertTitle = "Great!"
-  let validateAlertMessage = "We are glad you liked the proposed outfit! \nFind it in your Outfit history"
+  let validateAlertMessage = "We are glad you liked the proposed outfit! \nFind it in your Outfit history."
   let validateFirstActionTitle = "OK"
   let validateFirstActionStyle: UIAlertActionStyle = .Default
   let validateSecondActionTitle = "Go to my outfits"
@@ -66,7 +69,7 @@ class GlobalConstants: NSObject {
   let allPantsArray = ["Pants", "Jeans", "Legging", "Skirt", "Jogging"]
   let allShoesArray = ["Shoes", "Boots", "Sneakers"]
   let seasonArray = ["All", "Winter", "Spring", "Summer", "Fall"]
-  let colorArray = ["Black", "Blue", "Brown", "Grey", "Green", "Orange", "Red", "Violet", "White", "Yellow"]
+  let colorArray = ["Black", "Blue", "Brown", "Gray", "Green", "Orange", "Red", "Violet", "White", "Yellow"]
   let styleArray = ["Casual: Day in a Life, Go to work", "Fancy: Dress to Impress, Night out, Suit up", "Sport: Time for exercice, or Lazy day"]
   // constant strings
   let selectCatValue = "select category"

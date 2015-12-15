@@ -62,6 +62,8 @@ extension RecoEngine {
     var stylesToBePicked = [String]()
     var seasonsToBePicked = [String]()
     var categoriesToBePicked = [String]()
+    var predicateSeason: NSPredicate?
+    var compoundPredicate: NSCompoundPredicate!
     
     //1- based on the time of the day, pick a style
     let stylesArray = getStylesFromHour(hour)
@@ -71,8 +73,10 @@ extension RecoEngine {
     if let weather = weather {
       let temp = weather.temperature
       seasonsToBePicked = getSeasonsFromTemperature(temp)
+      predicateSeason = NSPredicate(format: Constants.seasonPredicateFormat, seasonsToBePicked)
     } else{
       print("RecoEngine - select Top: couldnt get the weather info")
+      seasonsToBePicked.append("none")
     }
     
     //3 - get date of the day to pick close worn more than 3 days ago
@@ -87,11 +91,18 @@ extension RecoEngine {
     categoriesToBePicked = Categories.allTopCategories
     
     //5 - create predicates and compound predicate for fetch request
-    let predicateSeason = NSPredicate(format: Constants.seasonPredicateFormat, seasonsToBePicked)
+    
     let predicateStyle = NSPredicate(format: Constants.stylePredicateFormat, stylesToBePicked)
     let predicateLastUsed = NSPredicate(format: Constants.datePredicateFormat, previousDate)
     let predicateCategory = NSPredicate(format: Constants.categoryPredicateFormat, categoriesToBePicked)
-    let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicateSeason, predicateStyle, predicateLastUsed, predicateCategory])
+    // if we have the weather and so the season, we include it in our filters
+    if let infoSeason = predicateSeason{
+      compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [infoSeason, predicateStyle, predicateLastUsed, predicateCategory])
+    } else {
+      // if not we just skip
+       compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicateStyle, predicateLastUsed, predicateCategory])
+    }
+    
     
     //6 - fetch the data accordingly
     fetchDataAndSelectClothe(compoundPredicate){ success, selectedClothe, error in
@@ -133,6 +144,7 @@ extension RecoEngine {
           seasonsToBePicked = getSeasonsFromTemperature(temp)
         } else {
           print("RecoEngine - select Pants: couldnt get the weather info")
+          seasonsToBePicked += ([Seasons.all, Seasons.winter, Seasons.fall, Seasons.spring, Seasons.summer])
         }
       }
       // 1.b - if not, pick the top season and "all"

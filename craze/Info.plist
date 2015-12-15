@@ -28,7 +28,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We only use your location to know the weather and personnalized your outfit recommendation.</string>
+	<string>We only use your location to know the weather and personnalize your outfit recommendation.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

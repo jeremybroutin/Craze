@@ -18,8 +18,8 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
   var pageImages: NSArray!
   var pageTexts: NSArray!
   
-  let tutorialText1 = "To get started, simply add your clothes to your closet by taking pictures and adding a couple of attributes for each of them. \nDon't worry, photo and attributes can be modify once created!"
-  let tutorialText2 = "Check the app whenever you need an outfit recommendation. \nFooBar will propose you an outfit based on the current weather, time of the day and much more... If you like the proposition, validate it - if not simply refresh it!"
+  let tutorialText1 = "To get started, simply add your clothes to your closet by taking pictures and adding a couple of attributes for each of them. \nDon't worry, photo and attributes can be modified once created!"
+  let tutorialText2 = "Check the app whenever you need an outfit recommendation. \nCraze will propose you an outfit based on the current weather, time of the day and much more... If you like the proposition, validate it - if not simply refresh it!"
   
   /*********************************** Mark: - App Life Cycle *****************************************/
   

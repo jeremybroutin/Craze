@@ -158,7 +158,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
         case "Rain", "Drizzle":
           setUIWithColor(constantsFile.PurpleRain, imageName: constantsFile.rainIcon , weatherLabelIndex: constantsFile.rainLabelIndex)
       case "Snow":
-        setUIWithColor(constantsFile.GreySnow, imageName: constantsFile.snowIcon, weatherLabelIndex: constantsFile.snowLabelIndex)
+        setUIWithColor(constantsFile.GraySnow, imageName: constantsFile.snowIcon, weatherLabelIndex: constantsFile.snowLabelIndex)
       default:
         setUIWithColor(constantsFile.BlueDefault, imageName: constantsFile.noWeatherIcon, weatherLabelIndex: constantsFile.noSongLabelIndex)
       }
@@ -428,15 +428,31 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     if currentLocation != nil {
       dispatch_async(GlobalUserInteractiveQueue) {
         OWM_Client.sharedInstance().getWeatherInfo(self.currentLocation!.latitude, lon: self.currentLocation!.longitude) { success, weather, error in
-          dispatch_async(dispatch_get_main_queue(), {
-            // inform the class that the weather info is now available
-            self.isWeatherInfoAvailable = true
-            self.storedWeather = weather
-            // notify the app so that it can run the recommendation
-            NSNotificationCenter.defaultCenter().postNotificationName(weatherNotificationKey, object: self)
-            // update UI based on wather info
-            self.loadWeatherInfo(weather)
-          })
+          if success {
+            dispatch_async(dispatch_get_main_queue(), {
+              // inform the class that the weather info is now available
+              self.isWeatherInfoAvailable = true
+              self.storedWeather = weather
+              // notify the app so that it can run the recommendation
+              NSNotificationCenter.defaultCenter().postNotificationName(weatherNotificationKey, object: self)
+              // update UI based on wather info
+              self.loadWeatherInfo(weather)
+            })
+          }
+          else {
+            // Create an alert
+            let alertController = UIAlertController(title: self.constantsFile.noWeatherTitle, message: self.constantsFile.noWeatherMessage, preferredStyle: .Alert)
+            let alertAction = UIAlertAction(title: "OK", style: .Default){ (action) in
+                alertController.dismissViewControllerAnimated(true, completion: nil)
+            }
+            alertController.addAction(alertAction)
+            // Display the alert and update UI texts
+            dispatch_async(self.GlobalMainQueue){
+              self.presentViewController(alertController, animated: true, completion: nil)
+              // notify the app so that it can run the recommendation
+              NSNotificationCenter.defaultCenter().postNotificationName(weatherNotificationKey, object: self)
+            }
+          }
         }
       }
     }
@@ -452,7 +468,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     NavigationController.sharedInstance().setNavBar(self)
     self.addClothesNowButton.hidden = true
     self.mainWeatherLabel.text = constantsFile.mainWeatherLabelValues[constantsFile.noSongLabelIndex]
-    self.noRecoLabel.text = constantsFile.noWeatherInfo
+    self.noRecoLabel.text = constantsFile.noLocationInfo
   }
   
   /******************************** MARK: - ModalTransitor Listener **********************************/
