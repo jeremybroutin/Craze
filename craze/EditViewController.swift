@@ -165,6 +165,10 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
       // insert function to open camera
       self.addElementOptions(self.constantsFile.cameraActionTitle)
     }
+    // disable Camera button click if not available
+    if !UIImagePickerController.isSourceTypeAvailable(.Camera){
+      cameraAction.enabled = false
+    }
     alertController.addAction(cameraAction)
     // Open Photo Gallery
     let galleryAction = UIAlertAction(title: constantsFile.galleryActionTitle, style: .Default) {(action) in

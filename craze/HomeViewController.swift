@@ -88,6 +88,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
     // drop shadows
     addShadow(topView, opacity: 0.5, width: 0.0, height: 2.0)
     addShadow(refreshButtonShadow, opacity: 0.5, width: 2.0, height: 1.0)
+    addShadow(validateButton, opacity: 0.5, width: 2.0, height: 1.0)
     addShadow(addClothesNowButton, opacity: 0.5, width: 2.0, height: 1.0)
     // disable validate outfit
     validateButton.hidden = true
@@ -449,7 +450,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, ModalTran
             // Display the alert and update UI texts
             dispatch_async(self.GlobalMainQueue){
               self.presentViewController(alertController, animated: true, completion: nil)
-              // notify the app so that it can run the recommendation
+              // notify the app so that it can still run the recommendation
               NSNotificationCenter.defaultCenter().postNotificationName(weatherNotificationKey, object: self)
             }
           }

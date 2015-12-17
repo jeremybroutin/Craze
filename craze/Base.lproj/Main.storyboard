@@ -2126,6 +2126,7 @@
                             <constraint firstAttribute="trailing" secondItem="8GV-1h-c8b" secondAttribute="trailing" constant="8" id="2AN-it-OCT"/>
                             <constraint firstItem="715-iZ-ICY" firstAttribute="leading" secondItem="eR9-aL-kj9" secondAttribute="leading" id="2Ex-V5-gWP"/>
                             <constraint firstItem="ak9-pr-gR9" firstAttribute="leading" secondItem="eR9-aL-kj9" secondAttribute="leadingMargin" constant="-20" id="463-ll-AIc"/>
+                            <constraint firstItem="8GV-1h-c8b" firstAttribute="height" secondItem="WNW-Cg-2UP" secondAttribute="height" id="7UC-z7-DPG"/>
                             <constraint firstItem="Kk0-jb-0BI" firstAttribute="centerX" secondItem="eR9-aL-kj9" secondAttribute="centerX" id="7va-k5-eBM"/>
                             <constraint firstItem="FOp-dO-gd7" firstAttribute="top" secondItem="Kk0-jb-0BI" secondAttribute="bottom" constant="8" id="DEA-QU-0Ve"/>
                             <constraint firstAttribute="trailing" secondItem="715-iZ-ICY" secondAttribute="trailing" id="DwZ-MP-f1k"/>
@@ -2146,6 +2147,7 @@
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="6KE-fD-Aqn" firstAttribute="top" secondItem="WNW-Cg-2UP" secondAttribute="bottom" constant="20" id="ceq-Oy-gyx"/>
+                            <constraint firstItem="8GV-1h-c8b" firstAttribute="width" secondItem="WNW-Cg-2UP" secondAttribute="width" id="dTW-yM-h3r"/>
                             <constraint firstAttribute="trailing" secondItem="WNW-Cg-2UP" secondAttribute="trailing" constant="8" id="gzT-lp-lpi"/>
                             <constraint firstItem="SCf-eH-McR" firstAttribute="width" secondItem="eR9-aL-kj9" secondAttribute="width" id="hgO-LG-ijy"/>
                             <constraint firstItem="8GV-1h-c8b" firstAttribute="top" secondItem="s7l-KX-60U" secondAttribute="bottom" constant="-3" id="jIY-wK-HsP">
@@ -2186,6 +2188,8 @@
                                 <exclude reference="a26-x7-TmX"/>
                                 <exclude reference="b33-GN-hfc"/>
                                 <exclude reference="2AN-it-OCT"/>
+                                <exclude reference="7UC-z7-DPG"/>
+                                <exclude reference="dTW-yM-h3r"/>
                                 <exclude reference="jIY-wK-HsP"/>
                                 <exclude reference="gzT-lp-lpi"/>
                                 <exclude reference="pJp-jo-VVU"/>
@@ -2224,6 +2228,8 @@
                                 <include reference="a26-x7-TmX"/>
                                 <include reference="b33-GN-hfc"/>
                                 <include reference="2AN-it-OCT"/>
+                                <include reference="7UC-z7-DPG"/>
+                                <include reference="dTW-yM-h3r"/>
                                 <include reference="jIY-wK-HsP"/>
                                 <include reference="gzT-lp-lpi"/>
                                 <include reference="pJp-jo-VVU"/>

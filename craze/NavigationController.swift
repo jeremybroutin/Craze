@@ -76,6 +76,10 @@ class NavigationController: NSObject, UIImagePickerControllerDelegate, UINavigat
       // insert function to open camera
       self.addElementOptions(self.cameraActionTitle)
     }
+    // disable the click on Camera button if not available
+    if !UIImagePickerController.isSourceTypeAvailable(.Camera){
+      cameraAction.enabled = false
+    }
     alertController.addAction(cameraAction)
     // Open Photo Gallery
     let galleryAction = UIAlertAction(title: galleryActionTitle, style: .Default) {(action) in
