@@ -14,14 +14,6 @@ import CoreData
 
 class Outfit: NSManagedObject {
   
-  /*struct Keys {
-    static let name = "name"
-    static let Date = "date"
-    static let ImageTop = "imageTop"
-    static let ImagePants = "imagePants"
-    static let ImageShoes = "imageShoes"
-  }*/
-  
   @NSManaged var name: String?
   @NSManaged var date: NSDate?
   @NSManaged var imageTop: NSData?
